@@ -1,0 +1,258 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #e5e7eb;
+
+    background: linear-gradient(
+        90deg,
+        #020617 0%,
+        #020b1f 30%,
+        #020617 60%,
+        #000000 100%
+    );
+
+    background-attachment: fixed;
+}
+
+/* SOFT GLOW BACKGROUND */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        circle at 20% 40%,
+        rgba(30, 64, 175, 0.15),
+        transparent 60%
+    );
+    z-index: -1;
+}
+
+/* NAVBAR */
+.nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #aaa;
+}
+
+/* HERO */
+.hero-new {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
+    position: relative;
+}
+
+/* HERO TEXT */
+.hero-left h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+}
+
+.hero-left span {
+    color: #6d7cff;
+}
+
+.hero-left p {
+    color: #aaa;
+    margin: 20px 0;
+}
+
+/* HERO IMAGE */
+.hero-right img {
+    width: 450px;
+    height: 550px;
+    object-fit: cover;
+    filter: brightness(0.6);
+    border-radius: 10px;
+}
+
+/* GLASS CARD */
+.hero-card {
+    position: absolute;
+    bottom: 80px;
+    right: 120px;
+
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+
+    backdrop-filter: blur(10px);
+}
+
+/* BUTTON */
+.btn {
+    padding: 10px 20px;
+    background: white;
+    color: black;
+    text-decoration: none;
+}
+
+/* SECTION GENERAL */
+.section {
+    text-align: center;
+    padding: 100px 10%;
+}
+
+/* SKILLS */
+.skill-box span {
+    margin: 10px;
+    padding: 8px 12px;
+    background: #1f2937;
+    border-radius: 6px;
+}
+
+/* PROJECT SECTION */
+.projects {
+    padding: 100px 10%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* PROJECT ROW */
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 100px;
+    transition: transform 0.3s ease;
+}
+
+/* REVERSE */
+.project-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.project-row img {
+    width: 400px;
+    border-radius: 12px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* TEXT */
+.project-text {
+    max-width: 500px;
+    transition: transform 0.3s ease;
+}
+
+.project-text p {
+    color: #aaa;
+}
+
+/* HOVER EFFECTS */
+.project-row:hover {
+    transform: translateY(-10px);
+}
+
+.project-row:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+.project-row:hover .project-text {
+    transform: translateY(-5px);
+}
+
+/* LINK */
+.project-text a {
+    color: #38bdf8;
+    text-decoration: none;
+    transition: letter-spacing 0.3s ease;
+}
+
+.project-text a:hover {
+    letter-spacing: 1px;
+}
+
+/* ACHIEVEMENTS */
+.achievements {
+    padding: 100px 10%;
+}
+
+.achieve-box {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* IMAGE */
+.achieve-box img {
+    width: 350px;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+/* HOVER */
+.achieve-box:hover img {
+    transform: scale(1.05);
+}
+
+/* TEXT */
+.achieve-text {
+    max-width: 500px;
+}
+
+.achieve-text p {
+    color: #aaa;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 100px;
+}
+
+.contact a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+/* FADE ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+
+    .hero-new {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-row.reverse {
+        flex-direction: column;
+    }
+
+    .achieve-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
